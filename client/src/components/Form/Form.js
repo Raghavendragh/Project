@@ -11,13 +11,15 @@ const Form = () => {
     });
     const classes = useStyles();
     const dispatch = useDispatch();
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(createPost(postData));
     }
 
     const clear = () => {
-
+        setCurrentId(0);
+        setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
     }
 
     return (
